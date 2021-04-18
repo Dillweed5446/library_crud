@@ -4,7 +4,6 @@ const dbGetCall = require('./read')
 const dbPostCall = require('./create')
 const deleteEntry = require('./delete')
 const updateEntry = require('./update')
-const { response } = require('express')
 const app = express()
 const router = express.Router()
 const PORT = 4000
@@ -25,7 +24,7 @@ app.route('/api')
   })
   .post((req, res) => {
     console.log(Object.values(JSON.parse(Object.keys(req.body)))) // Tracer code
-    dbPostCall(req.body)
+    // dbPostCall(req.body)
     res.send('Entry accepted!')
   })
   .put((req, res) => {

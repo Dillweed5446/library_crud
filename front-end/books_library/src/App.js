@@ -43,10 +43,11 @@ function App () {
     <button onClick={() => handleClick('books')} >View books</button>
     {renderTable === false
       ? <p>push a button!</p>
-      : <DataTable tableState={table} dataObjectArray={responseData}/> &&
-      table === 'authors'
-        ? <AuthorForm />
-        : <BookForm />
+      : <DataTable tableState={table} dataObjectArray={responseData}/>
+    }
+     { table === 'authors'
+       ? <AuthorForm />
+       : <BookForm />
     }
     </div>
       </header>
