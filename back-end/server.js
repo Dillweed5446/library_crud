@@ -23,8 +23,8 @@ app.route('/api')
       .catch(err => console.log(err))
   })
   .post((req, res) => {
-    console.log(Object.values(JSON.parse(Object.keys(req.body)))) // Tracer code
-    // dbPostCall(req.body)
+    console.log(Object.entries(JSON.parse(Object.keys(req.body)))) // Tracer code
+    dbPostCall(req.body, req.query.table)
     res.send('Entry accepted!')
   })
   .put((req, res) => {
@@ -32,7 +32,7 @@ app.route('/api')
     res.send('Entry changed.')
   })
   .delete((req, res) => {
-    deleteEntry(req.body)
+    deleteEntry(req.body, req.query.table)
     res.send('Entry deleted.')
   })
 

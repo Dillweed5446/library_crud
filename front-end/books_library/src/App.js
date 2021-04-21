@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import Axios from 'axios'
 import DataTable from './dataTable'
-import AuthorForm from './authorFields'
-import BookForm from './bookFields'
+import AddAuthorForm from './addAuthor'
+import AddBookForm from './addBook'
+import DeleteEntry from './delete'
 
 function App () {
   const [isLoading, setIsLoading] = useState(false)
@@ -41,16 +42,21 @@ function App () {
       <h2>View library</h2>
     <button onClick={() => handleClick('authors')} >View authors</button>
     <button onClick={() => handleClick('books')} >View books</button>
+    </div>
+    </header>
+    <div className="Body">
     {renderTable === false
       ? <p>push a button!</p>
       : <DataTable tableState={table} dataObjectArray={responseData}/>
     }
-     { table === 'authors'
-       ? <AuthorForm />
-       : <BookForm />
+     { <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+       {table === 'authors'
+         ? <AddAuthorForm style={{ flex: 1 }}/>
+         : <AddBookForm style={{ flex: 1 }}/>}
+         <DeleteEntry table={table} style={{ flex: 1 }}/>
+     </div>
     }
     </div>
-      </header>
     </div>
   )
 }

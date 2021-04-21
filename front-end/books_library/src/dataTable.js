@@ -21,10 +21,11 @@ export default function DataTable ({ dataObjectArray, tableState }) {
   const Title = styled.h3`
   border: .3rem solid blue;
   margin-bottom: 0;
+  margin-top: 0
   `
 
   return (
-      <Container>
+      <Container style={{ paddingTop: '1rem' }}>
         <Title>{tableState}</Title>
     <Table>
             <colgroup span={dataObjectArray[0].length}></colgroup>

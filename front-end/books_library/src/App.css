@@ -24,6 +24,10 @@
   color: white;
 }
 
+.Body {
+  background-color: darkgrey;
+}
+
 .App-link {
   color: #61dafb;
 }
