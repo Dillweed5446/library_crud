@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 
-export default class AuthorForm extends Component {
+export default class AddBookForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -44,27 +44,27 @@ export default class AuthorForm extends Component {
 
   render () {
     return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
             <h2>Add book to library</h2>
             <label>
             <p>ISBN</p>
-            <textarea type='text' name='isbn' onChange={ this.handleChange } value={this.state.isbn}/>
+            <textarea type='text' name='isbn' onChange={ this.handleChange } value={this.state.isbn} style={{ flex: 1 }}/>
             </label>
             <label>
             <p>Title</p>
-            <textarea type='text' name='title' onChange={ this.handleChange } value={this.state.title}/>
+            <textarea type='text' name='title' onChange={ this.handleChange } value={this.state.title} style={{ flex: 1 }}/>
             </label>
             <label>
             <p>Author ID</p>
-            <textarea type='text' name='author_id' onChange={ this.handleChange } value={this.state.author_id}/>
+            <textarea type='text' name='author_id' onChange={ this.handleChange } value={this.state.author_id} style={{ flex: 1 }}/>
             </label>
             <label>
             <p>Year Published</p>
-            <textarea type='text' name='year_pub' onChange={ this.handleChange } value={this.state.year_pub}/>
+            <textarea type='text' name='year_pub' onChange={ this.handleChange } value={this.state.year_pub} style={{ flex: 1 }}/>
             </label>
             <label>
             <p>Book Description</p>
-            <textarea type='text' name='description' onChange={ this.handleChange } value={this.state.description}/>
+            <textarea type='text' name='description' onChange={ this.handleChange } value={this.state.description} style={{ flex: 1 }}/>
             </label>
             <button type='submit'>Submit</button>
         </form>
