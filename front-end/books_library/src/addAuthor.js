@@ -15,7 +15,6 @@ export default class AddAuthorForm extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    console.log(this.state.lastName, this.state.firstName, this.state.countryName)
     Axios.post('http://localhost:4000/api', {
       name_last: `${this.state.lastName}`,
       name_first: `${this.state.firstName}`,
@@ -29,8 +28,8 @@ export default class AddAuthorForm extends Component {
         table: 'authors'
       }
     })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      .then(() => alert('Author successfully added'))
+      .catch(err => alert(err))
   }
 
   handleChange (event) {
@@ -41,7 +40,7 @@ export default class AddAuthorForm extends Component {
 
   render () {
     return (
-        <form onSubmit={this.handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+      <form onSubmit={this.handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
         <h2>Add author to library</h2>
         <label>
         <p>Last name</p>
@@ -56,7 +55,7 @@ export default class AddAuthorForm extends Component {
         <textarea type='text' name='countryName' onChange={this.handleChange} value={this.state.countryName} style={{ flex: 1 }}/>
         </label>
         <button type='submit'>Submit</button>
-    </form>
+      </form>
     )
   }
 }
