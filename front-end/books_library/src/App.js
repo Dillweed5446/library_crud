@@ -24,7 +24,6 @@ function App () {
         }
       })
         .then(res => setResponseData(res.data))
-        .then(() => console.log(responseData))
         .then(() => setRenderTable(true) && setIsLoading(false))
         .catch(err => console.log(err))
     }
@@ -46,7 +45,7 @@ function App () {
     </header>
     <div className="Body">
     {renderTable === false
-      ? <p>push a button!</p>
+      ? <div />
       : <DataTable tableState={table} dataObjectArray={responseData}/>
     }
      { <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>

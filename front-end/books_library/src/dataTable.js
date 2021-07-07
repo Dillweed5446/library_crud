@@ -2,28 +2,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+const Container = styled.div`
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+flex-direction: column;
+`
+
+const Table = styled.table`
+border-collapse: collapse;
+`
+const Cell = styled.td`
+border: .2rem solid green;
+`
+const Head = styled.th`
+border: .2rem solid green;
+`
+const Title = styled.h3`
+border: .3rem solid yellow;
+margin-bottom: 0;
+margin-top: 0;
+`
 export default function DataTable ({ dataObjectArray, tableState }) {
-  const Container = styled.div`
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  `
-
-  const Table = styled.table`
-  border-collapse: collapse;
-  `
-  const Cell = styled.td`
-  border: .2rem solid green;
-  `
-  const Head = styled.th`
-  border: .2rem solid yellow;
-  `
-  const Title = styled.h3`
-  border: .3rem solid blue;
-  margin-bottom: 0;
-  margin-top: 0
-  `
-
   return (
       <Container style={{ paddingTop: '1rem' }}>
         <Title>{tableState}</Title>

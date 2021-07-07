@@ -32,8 +32,8 @@ export default class AddBookForm extends Component {
         table: 'books'
       }
     })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      .then(res => alert(res))
+      .catch(err => alert(err))
   }
 
   handleChange (event) {

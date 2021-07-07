@@ -17,9 +17,9 @@ export default class DeleteEntry extends Component {
   handleBookSubmit (e) {
     e.preventDefault()
     Axios.delete('http://localhost:4000/api', {
-      isbn: `${this.state.isbn}`
-    },
-    {
+      data: {
+        isbn: `${this.state.isbn}`
+      },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -27,25 +27,25 @@ export default class DeleteEntry extends Component {
         table: 'books'
       }
     })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      .then(() => alert('Book successfully deleted.'))
+      .catch(err => alert(err))
   }
 
   handleAuthorSubmit (e) {
     e.preventDefault()
     Axios.delete('http://localhost:4000/api', {
-      author_id: `${this.state.authorId}`
-    },
-    {
+      data: {
+        author_id: `${this.state.authorId}`
+      },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       params: {
-        table: 'books'
+        table: 'authors'
       }
     })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      .then(() => alert('Author successfully deleted.'))
+      .catch(err => alert(err))
   }
 
   handleChange (event) {
