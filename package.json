@@ -47,5 +47,11 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.23.1"
   },
+  "engine": {
+    "node": "12.18.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
   "proxy": "http://localhost:4000"
 }

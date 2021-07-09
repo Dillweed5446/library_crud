@@ -16,7 +16,7 @@ export default class DeleteEntry extends Component {
 
   handleBookSubmit (e) {
     e.preventDefault()
-    Axios.delete('http://localhost:4000/api', {
+    Axios.delete(`${process.env.JAWSDB_MARIA_URL}/api`, {
       data: {
         isbn: `${this.state.isbn}`
       },
@@ -33,7 +33,7 @@ export default class DeleteEntry extends Component {
 
   handleAuthorSubmit (e) {
     e.preventDefault()
-    Axios.delete('http://localhost:4000/api', {
+    Axios.delete(`${process.env.JAWSDB_MARIA_URL}/api`, {
       data: {
         author_id: `${this.state.authorId}`
       },

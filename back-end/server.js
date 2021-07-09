@@ -6,13 +6,13 @@ const deleteEntry = require('./delete')
 const updateEntry = require('./update')
 const app = express()
 const router = express.Router()
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://pd-library-crud-app.herokuapp.com/',
     credentials: true
   }))
 
