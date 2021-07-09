@@ -14,7 +14,7 @@ function App () {
 
   useEffect(() => {
     if (isLoading === true) {
-      Axios.get('http://localhost:4000/api', {
+      Axios.get(`${process.env.JAWSDB_MARIA_URL}/api`, {
         headers: {
           'Content-type': 'application/x-www-form-urlencoded'
 

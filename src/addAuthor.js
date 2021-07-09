@@ -15,7 +15,7 @@ export default class AddAuthorForm extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    Axios.post('http://localhost:4000/api', {
+    Axios.post(`${process.env.JAWSDB_MARIA_URL}/api`, {
       name_last: `${this.state.lastName}`,
       name_first: `${this.state.firstName}`,
       country: `${this.state.countryName}`
